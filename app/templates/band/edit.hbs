@@ -1,1 +1,6 @@
 <h1>Edit a band</h1>
+<p>{{#link-to "bands"}}Bands{{/link-to}}</p>
+<label for="bandName">Band Name
+	{{one-way-input model.bandName update=(action (mut bandName))}}
+</label>
+<button type=button {{action "updateBand"}}>I am a button</button>

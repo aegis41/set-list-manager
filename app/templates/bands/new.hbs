@@ -4,8 +4,8 @@
 	{{one-way-input value=bandName update=(action (mut bandName))}}
 </label>
 
-<button type=button {{action "createBand"}}>I am a button</button>
-<h2>Existing Bands</h2>
+<button type=button {{action "createBand"}}>New Band</button>
+{{!-- <h2>Existing Bands</h2>
 {{#each model as |band|}}
 <p>{{band.bandName}}</p>
-{{/each}}
+{{/each}} --}}
