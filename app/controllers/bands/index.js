@@ -8,10 +8,9 @@ export default Ember.Controller.extend({
 			});
 			user.deleteRecord();
 			user.save();
+		},
+		edit(id) {
+			this.transitionToRoute("band.edit", id);
 		}
-		// },
-		// edit(id) {
-		// 	this.transitionToRoute("users.edit", id);
-		// }
 	}
 });

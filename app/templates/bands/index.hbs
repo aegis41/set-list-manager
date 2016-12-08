@@ -1,1 +1,5 @@
 <h1>Bands</h1>
+{{#link-to "index"}}Home{{/link-to}}
+{{#each model as |band|}}
+<p>{{band.bandName}} <a href="" {{action "delete" band.id}}>delete</a> <a href="" {{action "edit" band.id}}>Edit</a></p>
+{{/each}}
