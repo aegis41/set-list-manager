@@ -1,10 +1,10 @@
 <h1>New Band</h1>
-<p>{{#link-to "bands"}}Bands{{/link-to}}</p>
+{{nav-bar}}
 <label for="bandName">Band Name
 	{{one-way-input value=bandName update=(action (mut bandName))}}
 </label>
 
-<button type=button {{action "createBand"}}>New Band</button>
+<button type="button" {{action "createBand"}}>New Band</button>
 {{!-- <h2>Existing Bands</h2>
 {{#each model as |band|}}
 <p>{{band.bandName}}</p>

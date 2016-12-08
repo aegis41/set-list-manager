@@ -9,9 +9,7 @@ Router.map(function() {
 	this.route("bands", function () {
 		this.route("new");
 	});
-	this.route("band", { path: "/band/:band_id"}, function () {
-		this.route("edit", { path: "/band/edit/:band_id"});
-	});
+	this.route("band", { path: "/band/:band_id"});
 });
 
 export default Router;

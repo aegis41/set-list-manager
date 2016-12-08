@@ -1,0 +1,11 @@
+<h1>{{model.bandName}}</h1>
+{{nav-bar}}
+{{#if isEditing}}
+	<label for="bandName">Band Name
+		{{one-way-input value=model.bandName update=(action (mut model.bandName))}}
+	</label>
+	<button type="button" {{action "save"}}>save</button>
+{{else}}
+	<p>Band Name: {{model.bandName}}</p>
+	<a href="#" {{action "beginEditMode"}}>edit</a>
+{{/if}}
