@@ -5,6 +5,11 @@
 		{{one-way-input value=model.bandName update=(action (mut model.bandName))}}
 	</label>
 	<button type="button" {{action "save"}}>save</button>
+	{{#if isAddingMembers}}
+		<a href="#" {{action "endAddMembersMode"}}>done adding members</a>
+	{{else}}
+		<a href="#" {{action "beginAddMembersMode"}}>add members</a>
+	{{/if}}
 {{else}}
 	<p>Band Name: {{model.bandName}}</p>
 	<a href="#" {{action "beginEditMode"}}>edit</a>
