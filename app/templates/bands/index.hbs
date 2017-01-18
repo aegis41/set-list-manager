@@ -1,5 +1,4 @@
 <h1>Bands</h1>
-{{nav-bar}}
 {{#each model as |band|}}
 <p>{{#link-to "band" band}}{{band.bandName}}{{/link-to}} <a href="/" {{action "delete" band.id}}>delete</a></p>
 {{/each}}

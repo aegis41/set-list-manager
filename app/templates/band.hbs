@@ -1,16 +1,18 @@
 <h1>{{model.bandName}}</h1>
-{{nav-bar}}
 {{#if isEditing}}
-	<label for="bandName">Band Name
-		{{one-way-input value=model.bandName update=(action (mut model.bandName))}}
-	</label>
-	<button type="button" {{action "save"}}>save</button>
-	{{#if isAddingMembers}}
-		<a href="#" {{action "endAddMembersMode"}}>done adding members</a>
-	{{else}}
-		<a href="#" {{action "beginAddMembersMode"}}>add members</a>
-	{{/if}}
+  <label for="bandName">Band Name
+    {{one-way-input value=model.bandName update=(action (mut model.bandName))}}
+  </label>
+  <button type="button" {{action "save"}}>save</button>
+  <div>
+  {{#if isAddingMembers}}
+    <a href="#" {{action "toggleAddMembersMode"}}>done adding members</a>
+
+  {{else}}
+    <a href="#" {{action "toggleAddMembersMode"}}>add members</a>
+  {{/if}}
+  </div>
 {{else}}
-	<p>Band Name: {{model.bandName}}</p>
-	<a href="#" {{action "beginEditMode"}}>edit</a>
+  <p>Band Name: {{model.bandName}}</p>
+  <a href="#" {{action "beginEditMode"}}>edit</a>
 {{/if}}

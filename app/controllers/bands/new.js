@@ -16,8 +16,8 @@ export default Ember.Controller.extend({
 			});
 
 
-			band.save().then(() => {
-				//this.transitionToRoute("bands");
+			band.save().then((data) => {
+				this.transitionToRoute("/band/" + data.get("id"));
 				this.set("bandName", "");
 			});
 		}
