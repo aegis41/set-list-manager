@@ -6,6 +6,7 @@ export default Ember.Controller.extend({
 	actions: {
 		createBand() {
 			let bandName = this.get("bandName");
+      let members = [];
 
 			if(!bandName.trim()) {
 				return;
@@ -13,8 +14,8 @@ export default Ember.Controller.extend({
 
 			let band = this.store.createRecord("band", {
 				bandName: bandName,
+        members: members
 			});
-
 
 			band.save().then((data) => {
 				this.transitionToRoute("/band/" + data.get("id"));

@@ -5,5 +5,5 @@ export default DS.Model.extend({
 	lastName: DS.attr("string"),
 	joined: DS.attr("date"),
 	instruments: DS.attr("string"),
-	bands: DS.hasMany("band")
+	bands: DS.belongsTo("band")
 });

@@ -14,6 +14,15 @@ export default Ember.Controller.extend({
       this.get("model").save();
       this.set("isEditing", false);
       this.set("isAddingMembers", false);
+    },
+    saveMember() {
+      let band = this.store.peekRecord("band", this.get("model.id"));
+      let member = this.store.createRecord("member", {
+        firstName: "Test",
+        lastName: "Member",
+        band: band
+      });
+      member.save();
     }
   }
 });
