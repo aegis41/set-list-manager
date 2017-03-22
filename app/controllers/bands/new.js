@@ -6,7 +6,22 @@ export default Ember.Controller.extend({
 	actions: {
 		createBand() {
 			let bandName = this.get("bandName");
-      let members = [];
+      let members = [
+        {
+          firstName: "Chuck",
+          lastName: "Berry",
+          joined: "",
+          instruments: "Guitar",
+          band: bandName
+        },
+        {
+          firstName: "Eddie",
+          lastName: "Vedder",
+          joined: "",
+          instruments: "Guitar",
+          band: bandName
+        }
+      ];
 
 			if(!bandName.trim()) {
 				return;
