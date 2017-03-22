@@ -4,15 +4,15 @@ export default Ember.Controller.extend({
   isEditing: false,
   isAddingMembers: false,
   actions: {
-    beginEditMode() {
-      this.set("isEditing", true);
+    toggleEditMode() {
+      this.toggleProperty("isEditing");
     },
     toggleAddMembersMode() {
       this.toggleProperty("isAddingMembers");
     },
     save() {
       this.get("model").save();
-      this.toggleProperty("isEditing");
+      this.set("isEditing", false);
       this.set("isAddingMembers", false);
     }
   }

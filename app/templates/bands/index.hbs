@@ -1,4 +1,8 @@
 <h1>Bands</h1>
 {{#each model as |band|}}
-<p>{{#link-to "band" band}}{{band.bandName}}{{/link-to}} <a href="/" {{action "delete" band.id}}>delete</a></p>
+<p>
+  {{#link-to "band" band}}{{band.bandName}}{{/link-to}}
+  <a href="/" {{action "delete" band.id}}>delete</a>
+  {{#link-to "band" band isEditing=true}}edit{{/link-to}}
+</p>
 {{/each}}

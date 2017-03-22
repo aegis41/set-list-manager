@@ -5,14 +5,19 @@
   </label>
   <button type="button" {{action "save"}}>save</button>
   <div>
-  {{#if isAddingMembers}}
-    <a href="#" {{action "toggleAddMembersMode"}}>done adding members</a>
 
-  {{else}}
-    <a href="#" {{action "toggleAddMembersMode"}}>add members</a>
-  {{/if}}
+    <a href="#" {{action "toggleEditMode"}}>exit edit mode</a>
   </div>
 {{else}}
   <p>Band Name: {{model.bandName}}</p>
-  <a href="#" {{action "beginEditMode"}}>edit</a>
+  <p>
+    <a href="#" {{action "toggleEditMode"}}>edit</a>
+  </p>
 {{/if}}
+<p>
+  {{#if isAddingMembers}}
+    <a href="#" {{action "toggleAddMembersMode"}}>done adding members</a>
+  {{else}}
+    <a href="#" {{action "toggleAddMembersMode"}}>add members</a>
+  {{/if}}
+</p>
