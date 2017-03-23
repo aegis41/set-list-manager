@@ -16,7 +16,7 @@ export default Ember.Controller.extend({
       this.set("isAddingMembers", false);
     },
     saveMember() {
-      let band = this.store.peekRecord("band", this.get("model.id"));
+      let band = this.get("model");
       let firstName = this.get("firstName");
       let lastName = this.get("lastName");
       let member = this.store.createRecord("member", {
@@ -24,10 +24,15 @@ export default Ember.Controller.extend({
         lastName: lastName,
         band: band
       });
+      band.get("members").pushObject(member);
       member.save();
-      console.log(band);
-      // band.members.push(member);
-      // band.save();
+      band.save();
+      this.set("firstName", "");
+      this.set("lastName", "");
+    },
+    deleteMember(id) {
+      let member = this.get("model.members")
+      console.log(member);
     }
   }
 });

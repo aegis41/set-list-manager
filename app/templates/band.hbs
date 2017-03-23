@@ -16,11 +16,11 @@
 {{/if}}
 <p>
   {{#if isAddingMembers}}
-    <label for="firsName">First Name
-      {{one-way-input value=model.members.firstName update=(action (mut model.members.firstName))}}
+    <label for="firstName">First Name
+      {{one-way-input value=firstName update=(action (mut firstName))}}
     </label>
-    <label for="firsName">Last Name
-      {{one-way-input value=model.members.lastName update=(action (mut model.members.lastName))}}
+    <label for="lastName">Last Name
+      {{one-way-input value=lastName update=(action (mut lastName))}}
     </label>
   <button type="button" {{action "saveMember"}}>save</button>
     <p><a href="#" {{action "toggleAddMembersMode"}}>members managed</a></p>
@@ -31,6 +31,6 @@
 </p>
 <ul>
   {{#each model.members as |member|}}
-    <li>{{member.firstName}} {{member.lastName}}</li>
+    <li>{{member.firstName}} {{member.lastName}} <a href="#" {{action "deleteMember" member.id}}>delete</a></li>
   {{/each}}
 </ul>

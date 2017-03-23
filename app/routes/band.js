@@ -7,5 +7,10 @@ export default Ember.Route.extend({
       controller.set("isEditing", false);
     }
     this.set("currentId", model.id);
+  },
+  actions: {
+    willTransition(transition) {
+      this.controller.set("isEditing", false);
+    }
   }
 });

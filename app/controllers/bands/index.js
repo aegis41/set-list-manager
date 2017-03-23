@@ -3,11 +3,11 @@ import Ember from "ember";
 export default Ember.Controller.extend({
 	actions: {
 		delete(id) {
-			let user = this.get("model").find((value) => {
+			let band = this.get("model").find((value) => {
 				return value.id === id;
 			});
-			user.deleteRecord();
-			user.save();
+			band.deleteRecord();
+			band.save();
 		}
 	}
 });
