@@ -17,15 +17,20 @@
 <p>
   {{#if isAddingMembers}}
     <label for="firsName">First Name
-      {{one-way-input value=firstName}} Last Name {{one-way-input value=lastName}}
-      {{! one-way-input value=member.firstName update=(action (mut member.firstName))}}
+      {{one-way-input value=model.members.firstName update=(action (mut model.members.firstName))}}
+    </label>
+    <label for="firsName">Last Name
+      {{one-way-input value=model.members.lastName update=(action (mut model.members.lastName))}}
     </label>
   <button type="button" {{action "saveMember"}}>save</button>
     <p><a href="#" {{action "toggleAddMembersMode"}}>members managed</a></p>
   {{else}}
-    {{#each model.members as |member|}}
-      <p>member.firstName</p>
-    {{/each}}
+
     <p><a href="#" {{action "toggleAddMembersMode"}}>manage members</a></p>
   {{/if}}
 </p>
+<ul>
+  {{#each model.members as |member|}}
+    <li>{{member.firstName}} {{member.lastName}}</li>
+  {{/each}}
+</ul>

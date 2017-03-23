@@ -17,12 +17,17 @@ export default Ember.Controller.extend({
     },
     saveMember() {
       let band = this.store.peekRecord("band", this.get("model.id"));
+      let firstName = this.get("firstName");
+      let lastName = this.get("lastName");
       let member = this.store.createRecord("member", {
-        firstName: "Test",
-        lastName: "Member",
+        firstName: firstName,
+        lastName: lastName,
         band: band
       });
       member.save();
+      console.log(band);
+      // band.members.push(member);
+      // band.save();
     }
   }
 });
